@@ -1,3 +1,22 @@
 <h2><%= t ".title" %></h2>
-
-<p><%= t ".content" %></p>
+<p class="center"><%= t ".content" %></p>
+<p class="notice"><%= notice %></p>
+<h1>
+  <%= t ".all_products" %>
+</h1>
+<div class="center">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <%= link_to image_tag(product.image_product.url(:thumb)), product %>
+        <div class="caption">
+          <h3><%= product.title %></h3>
+          <p><%= number_to_currency product.price %></p>
+          <p><%= t ".created_by " "#{product.user.name}" %></p>
+        </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

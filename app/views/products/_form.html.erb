@@ -1,0 +1,40 @@
+<%= form_for product, html: {multipart: true} do |f| %>
+  <% if product.errors.any? %>
+    <div class="error-explanation">
+      <h2><%= pluralize(product.errors.count, t(".error")) %> :</h2>
+      <ul>
+        <% product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :title, t(".title") %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :summary, t(".summary") %>
+  <%= f.text_field :summary, class: "form-control" %>
+
+  <%= f.label :content, t(".content") %>
+  <%= f.text_field :content, class: "form-control" %>
+
+  <%= f.label :pricet, t(".price") %>
+  <%= f.text_field :content, class: "form-control" %>
+
+  <%= f.label :link_preview, t(".link_preview") %>
+  <%= f.text_field :link_preview, class: "form-control" %>
+
+  <%= f.label :image_product  %>
+  <%= f.file_field :image_product, class: "form-control" %>
+
+  <%= f.label :item  %>
+  <%= f.file_field :item, class: "form-control" %>
+
+  <%= f.label :category_id %>
+  <%= f.collection_select(:category_id, categories, :id, :name) %>
+
+  <div class="actions">
+    <%= f.submit t(".create") %>
+  </div>
+<% end %>

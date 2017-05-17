@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t ".title" %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <table>
+        <tr>
+          <th><%= t ".name" %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+        <tr>
+          <td><%= product.title %></td>
+          <td><%= link_to t(".show"), product %></td>
+          <td><%= link_to t(".edit"), edit_product_path(product) %></td>
+          <td><%= link_to t(".destroy"), product, method: :delete,
+            data: {confirm: t(".sure")} %></td>
+        </tr>
+      </table>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t(".new_product"), new_product_path %>

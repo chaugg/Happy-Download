@@ -1,0 +1,25 @@
+<p class="notice"><%= notice %></p>
+<%= link_to t("new_product"), new_product_path %>
+<table class="table table-striped table-bordered">
+  <tr>
+    <th><%= t ".image" %></th>
+    <th><%= t ".name" %></th>
+    <th><%= t ".content" %></th>
+    <th><%= t ".price" %></th>
+    <th><%= t ".action" %></th>
+  </tr>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= image_tag(product.image_product.url(:thumb)) %></td>
+      <td><%= product.title %></td>
+      <td><%= product.content %></td>
+      <td><%= number_to_currency(product.price) %></td>
+      <td>
+        <%= link_to t(".show"), product %>
+        <%= link_to t(".edit"), edit_product_path(product) %>
+        <%= link_to t(".destroy"), product,
+          method: :delete, data: {confirm: t(".sure")}, class: "btn btn-link" %>
+      </td>
+    </tr>
+  <% end %>
+</table>

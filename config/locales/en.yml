@@ -24,10 +24,15 @@ en:
   static_pages:
     home:
       title: "Home page"
-      content: "This would be a static home page in a Rails application."
+      content: "This is homepage."
     about:
       title: "About page"
       content: "This is about page"
+    manage_product:
+      sure: "Are you sure"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
   layouts:
     header:
       home: "Home"
@@ -36,3 +41,6 @@ en:
       settings: "Settings"
       log_out: "Log out"
       login: "Login"
+  products:
+    create:
+      success: "Success!"

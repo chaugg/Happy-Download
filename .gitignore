@@ -16,12 +16,12 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
 # Ignore Byebug command history file.
 .byebug_history
 
 config/database.yml
 config/secrets.yml
 /test/
+/public/system/**
 /vendor/
 /.framgia-ci-reports/

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517030618) do
+ActiveRecord::Schema.define(version: 20170518032905) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -59,15 +59,23 @@ ActiveRecord::Schema.define(version: 20170517030618) do
 
   create_table "products", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "link_download"
+    t.integer  "category_id"
     t.string   "link_preview"
     t.text     "title"
     t.text     "summary"
     t.text     "content"
     t.decimal  "price"
     t.string   "image_product"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "image_product_file_name"
+    t.string   "image_product_content_type"
+    t.integer  "image_product_file_size"
+    t.datetime "image_product_updated_at"
+    t.string   "item_file_name"
+    t.string   "item_content_type"
+    t.integer  "item_file_size"
+    t.datetime "item_updated_at"
     t.index ["user_id", "created_at"], name: "index_products_on_user_id_and_created_at"
   end
 
