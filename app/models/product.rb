@@ -11,7 +11,9 @@ class Product < ApplicationRecord
     content_type: "application/zip"
 
   has_attached_file :image_product, styles: {medium: "300x300>",
-    thumb: "100x100>"}, default_url: "default.png"
+    thumb: "100x100>"}, default_url: "default.png", use_timestamp: "false",
+    hash_secret: "AnhChiThichAnChao_DoChinhTayEmNau",
+    adapter_options: {hash_digest: Digest::SHA256}
   validates_attachment_content_type :image_product,
     content_type: /\Aimage\/.*\z/
 end

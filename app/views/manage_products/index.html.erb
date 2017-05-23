@@ -10,7 +10,8 @@
   </tr>
   <% @products.each do |product| %>
     <tr>
-      <td><%= image_tag(product.image_product.url(:thumb)) %></td>
+      <td><%= image_tag product.image_product.url(:thumb,
+        timestamp: false) %></td>
       <td><%= product.title %></td>
       <td><%= product.content %></td>
       <td><%= number_to_currency(product.price) %></td>

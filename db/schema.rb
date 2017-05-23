@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518032905) do
+ActiveRecord::Schema.define(version: 20170523202525) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -44,8 +44,9 @@ ActiveRecord::Schema.define(version: 20170518032905) do
     t.integer  "product_id"
     t.integer  "order_id"
     t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "quantity",   default: 1
   end
 
   create_table "orders", force: :cascade do |t|
@@ -76,6 +77,8 @@ ActiveRecord::Schema.define(version: 20170518032905) do
     t.string   "item_content_type"
     t.integer  "item_file_size"
     t.datetime "item_updated_at"
+    t.text     "md5_checksum"
+    t.string   "image_fingerprint"
     t.index ["user_id", "created_at"], name: "index_products_on_user_id_and_created_at"
   end
 
@@ -105,6 +108,7 @@ ActiveRecord::Schema.define(version: 20170518032905) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "image_fingerprint"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
