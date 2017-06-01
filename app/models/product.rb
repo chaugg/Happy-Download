@@ -7,6 +7,9 @@ class Product < ApplicationRecord
   has_many :feedbacks, dependent: :destroy
   has_many :notifications, as: :notificationable
 
+  acts_as_taggable
+  acts_as_taggable_on :skills, :interests
+
   ratyrate_rateable "quality"
 
   has_attached_file :item

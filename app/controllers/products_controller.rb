@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.paginate page: params[:page]
+    if params[:tag]
+      @products = Product.tagged_with(params[:tag])
+    end
   end
 
   def new
@@ -66,6 +69,6 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit :category_id, :title, :summary, :content,
-      :price, :image_product, :item
+      :price, :image_product, :item, :tag_list
   end
 end

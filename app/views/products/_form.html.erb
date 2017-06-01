@@ -25,6 +25,15 @@
   <%= f.label :category_id %>
   <%= f.collection_select(:category_id, categories, :id, :name) %>
 
+
+
+  <div class="field">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   </div>
