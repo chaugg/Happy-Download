@@ -116,7 +116,6 @@ ActiveRecord::Schema.define(version: 20170609060301) do
     t.string   "item_content_type"
     t.integer  "item_file_size"
     t.datetime "item_updated_at"
-    t.string   "item_fingerprint"
     t.integer  "status",                     default: 1
     t.string   "item_fingerprint"
     t.index ["user_id", "created_at"], name: "index_products_on_user_id_and_created_at"

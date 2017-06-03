@@ -11,7 +11,6 @@ class ConversationChannel < ApplicationCable::Channel
     message_params = data["message"].each_with_object({}) do |el, hash|
       hash[el.values.first] = el.values.last
     end
-
     Message.create message_params
   end
 end
