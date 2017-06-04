@@ -21,7 +21,7 @@
       <td><%= order_detail.product.title %></td>
       <td><%= order_detail.product.link_preview %></td>
       <td><%= link_to t(".download"),
-        order_detail.product.item.expiring_url(30) %></td>
+        order_detail.product.item.temp_url(30) %></td>
       <% if @title == "sales" %>
         <td><%= order_detail.buyer.name %></td>
       <% else %>

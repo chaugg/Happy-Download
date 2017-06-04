@@ -36,7 +36,7 @@ class OrderDetailsController < ApplicationController
       Stripe::Charge.create(
         amount: (@product.price * 100).floor,
         currency: "usd",
-        source: token
+        customer: Stripe::Customer.create(source: params[:stripeToken])
       )
     rescue Stripe::CardError => error
       flash[:danger] = error.message
