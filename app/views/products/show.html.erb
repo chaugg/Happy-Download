@@ -14,6 +14,8 @@
     <p><%= link_to t("link_preview"), @product.link_preview %></p>
     <%= render "wishlist_form", product: @product %>
     <p><%= @product.content %></p>
+    <p><%= link_to @product.user.email,
+      chat_index_path %></p>
     <% if user_product @product %>
       <p><%= link_to t("edit"), edit_product_path(@product) %></p>
     <% else %>

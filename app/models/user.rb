@@ -13,7 +13,8 @@ class User < ApplicationRecord
   has_many :order_details, dependent: :destroy
   has_many :sales, class_name: OrderDetail.name, foreign_key: "seller_id"
   has_many :purchases, class_name: OrderDetail.name, foreign_key: "buyer_id"
-
+  has_many :messages
+  has_many :conversations, foreign_key: :sender_id
   has_many :notifications, dependent: :destroy
 
   def wish? product
