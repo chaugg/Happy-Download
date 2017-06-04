@@ -27,7 +27,6 @@
           <div class="caption">
             <h3><%= product.title %></h3>
             <p><%= number_to_currency product.price %></p>
-<<<<<<< 2fcd2b97be50773a0a8bfa22f1be5efee2c6c8e0
             <p><%= t "quality" %></p>
             <div class="readonly-star">
               <p><%= rating_for product, Settings.rate.quality,
@@ -35,11 +34,6 @@
                 enable_half: true %></p>
             </div>
             <p><%= t ".created_by " "#{product.user.name}" %></p>
-=======
-            <p>
-              <%= t "quality" %><%= rating_for product, Settings.rate.quality,
-                star: Settings.rate.star_number, enable_half: true %></p>
->>>>>>> Fulltext search @products with autocomplete
           </div>
         </div>
       </div>

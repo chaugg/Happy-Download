@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'chat/index'
   root "products#index"
   get "/static_pages/*page", to: "static_pages#show"
   devise_for :users, to: "users"
@@ -15,6 +16,11 @@ Rails.application.routes.draw do
   resources :feedbacks
   resources :notifications, only: [:show,:index,:update]
   resources :wish_lists, only: [:create, :destroy]
-
   mount ActionCable.server, at: "/cable"
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+    resources :messages, only: [:create]
+  end
 end
