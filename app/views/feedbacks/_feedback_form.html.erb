@@ -1,7 +1,7 @@
 <%= form_for feedback, remote: true do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: t(".new_feedback") %>
+    <%= f.text_area :content, placeholder: t("new_comment") %>
   </div>
   <%= f.hidden_field :product_id, value: product.id %>
   <%= f.submit t("post"), class: "btn btn-primary" %>

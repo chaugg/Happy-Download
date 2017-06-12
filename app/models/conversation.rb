@@ -13,7 +13,7 @@ class Conversation < ApplicationRecord
   end)
 
   class << self
-    def find_sender_recipient sender_id, recipient_id
+    def get sender_id, recipient_id
       conversation = between(sender_id, recipient_id).first
       return conversation if conversation.present?
       create(sender_id: sender_id, recipient_id: recipient_id)

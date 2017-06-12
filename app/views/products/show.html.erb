@@ -16,19 +16,20 @@
       <p><%= link_to t("link_preview"), @product.link_preview %></p>
       <%= render "wishlist_form", product: @product %>
       <p><%= @product.content %></p>
-      <p><%= link_to @product.user.email,
+      <p>Message to <%= link_to @product.user.name,
       chat_index_path %></p>
       <% if user_product @product %>
         <p><%= link_to t("edit"), edit_product_path(@product) %></p>
       <% else %>
         <p>
-          <%= link_to t("buy_now"), new_product_order_detail_path(@product) %>
+          <%= link_to t("buy_now"), new_product_order_detail_path(@product),
+            class: "btn btn-primary" %>
         </p>
       <% end %>
       <table class="div-create">
         <thead>
           <tr>
-            <th><%= t ".feedback" %></th>
+            <th><%= t ".comment" %></th>
             <th colspan="3"></th>
           </tr>
         </thead>

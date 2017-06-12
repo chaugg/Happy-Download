@@ -18,7 +18,8 @@ $orange: #e38968;
 $gray: #92959e;
 $chat-bg: #c5ddeb;
 $chat-list: #444753;
-
+$coral: #ff7f50;
+$lightcoral: #f08080;
 // universal
 
 body {
@@ -171,11 +172,11 @@ input {
 
 .raty-cancel {
   display: none;
-ul {
-  list-style: none;
-  padding-left: 0;
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
 }
-
 .messages-list {
   max-height: 200px;
   overflow-x: hidden;
@@ -209,4 +210,22 @@ ul {
 
 .panel panel-primary {
   background-color: $chat-list !important;
+}
+
+.list-products {
+  margin-top: 70px;
+}
+
+.ui-menu-item {
+  list-style: none;
+  color: $lightcoral;
+  font-weight: bold;
+}
+
+.suggest {
+  color: $red;
+}
+
+.suggest em{
+  color: $coral;
 }

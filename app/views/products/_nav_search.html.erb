@@ -19,8 +19,8 @@
       <% end %>
     <div class="suggest">
       <% if available_suggestion? %>
-        <span><%= t ".did_you_mean" %></span>
-        <%= products.suggestions[0] %>
+        <strong><%= t ".did_you_mean" %></strong>
+        <em><%= products.suggestions[0] %></em>
       <% end %>
     </div>
   </div>

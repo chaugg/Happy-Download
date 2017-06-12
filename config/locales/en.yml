@@ -29,6 +29,7 @@ en:
   delete: "Delete"
   update: "Update"
   buy_now: "Buy now"
+  new_comment: "New comment"
   buy_in: "Buy in"
   price: "Price ($)"
   post: "Post"
@@ -73,8 +74,6 @@ en:
       edit_product: "Edit product"
     destroy:
       success: "Product has successfully destroyed"
-    feedback_form:
-      new_feedback: "New feedback"
     show:
       product_no_longer_exists: "Product is no longer exist"
       product_price: "$%{price}"
