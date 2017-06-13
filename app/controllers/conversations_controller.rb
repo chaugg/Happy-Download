@@ -16,6 +16,7 @@ class ConversationsController < ApplicationController
       end
     else
       redirect_to root_path, notice: t(".not_found")
+    end
   end
 
   private

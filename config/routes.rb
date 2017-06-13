@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :wish_lists, only: [:create, :destroy]
   resources :conversations, only: [:create] do
     member do
-      post :destroy
+      delete :destroy
     end
     resources :messages, only: [:create]
   end

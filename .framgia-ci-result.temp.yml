@@ -24,7 +24,7 @@ rspec:
   ignore: false
 rubocop:
   comment: true
-  exit_code: 256
+  exit_code: 0
   ignore: false
 scss-lint:
   comment: true
