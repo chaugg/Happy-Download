@@ -20,4 +20,5 @@
 //= require jquery.raty
 //= require ratyrate
 //= require highcharts
+//= require chat
 //= require_tree .

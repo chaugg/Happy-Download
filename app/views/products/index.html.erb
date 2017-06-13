@@ -1,8 +1,7 @@
-<div class="container">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-8 col-md-offset-2">
       <%= render "nav_search", products: @products, categories: @categories %>
-      <div id="list-products" class="row">
+      <div id="list-products" class="row list-products">
         <% @products.each do |product| %>
           <div class="col-sm-4 col-lg-4 col-md-4">
             <%= render "product_small", product: product %>
@@ -12,4 +11,3 @@
       <%= will_paginate @products %>
     </div>
   </div>
-</div>

@@ -10,7 +10,16 @@ $black: #000;
 $noti-not-read: #e9ebee;
 $noti-not-read-hover: #f6f7f9;
 $gray-body: #e9ebee;
-
+$message-sent: #94c2ed;
+$message-received: #86bb71;
+$green: #86bb71;
+$blue: #94c2ed;
+$orange: #e38968;
+$gray: #92959e;
+$chat-bg: #c5ddeb;
+$chat-list: #444753;
+$coral: #ff7f50;
+$lightcoral: #f08080;
 // universal
 
 body {
@@ -163,4 +172,62 @@ input {
 
 .raty-cancel {
   display: none;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+.messages-list {
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.message-sent {
+  background-color: $message-sent;
+  float: right;
+  margin: 5px 20px;
+  padding: 10px;
+  position: relative;
+}
+
+.message-received {
+  background-color: $message-received;
+  float: left;
+  margin: 5px 20px;
+  padding: 10px;
+}
+
+.chat {
+  background-color: $chat-bg;
+  height: 100vh;
+  width: 100vw;
+}
+
+.chat-list {
+  color: $chat-list;
+}
+
+.panel panel-primary {
+  background-color: $chat-list !important;
+}
+
+.list-products {
+  margin-top: 70px;
+}
+
+.ui-menu-item {
+  color: $lightcoral;
+  font-weight: bold;
+  list-style: none;
+}
+
+.suggest {
+  color: $red;
+}
+
+.suggest em {
+  color: $coral;
 }

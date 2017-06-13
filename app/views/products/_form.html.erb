@@ -24,6 +24,9 @@
   <%= f.label :image_product  %>
   <%= f.file_field :image_product, class: "form-control" %>
 
+  <%= image_tag product.image_product.url %>
+  <br>
+
   <%= f.label :item  %>
   <%= f.file_field :item, class: "form-control" %>
 
